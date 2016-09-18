@@ -1,0 +1,17 @@
+version: '2'
+
+services:
+
+  icydee-dax:
+    build:
+      context: .
+      dockerfile: ./docker/build-server/Dockerfile
+    command: '/bin/bash'
+    container_name: 'icydee-dax'
+    image: 'icydee/dax'
+    volumes:
+      - ./bin:/home/icydee/dax/bin
+      - ./etc:/home/icydee/dax/etc
+      - ./log:/home/icydee/dax/log
+      - ./lib:/home/icydee/dax/lib
+      - ./t:/home/icydee/dax/t
